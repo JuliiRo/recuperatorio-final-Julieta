@@ -1,0 +1,52 @@
+<%- include('./partials/head') %>
+
+</head>
+
+<body class="body-detalle">
+    <%- include('./partials/header') %>
+
+    <div class="uk-container">
+        <div class="uk-section">
+
+            <h1 class="uk-text-center"><%= title %> </h1>
+           
+          </div>
+        
+
+        
+    
+          <ul class="uk-flex uk-flex-wrap uk-flex-between uk-child-width-1-3 uk-padding-remove">
+      
+            <% for( let i = 0; i < productos.length; i++ ) { %>
+              <li class="uk-card uk-card-default uk-card-hover uk-card-body uk-margin">
+                <a href="/productos/detalle/<%= productos[i].id %>"  class="uk-link-text">
+                  <img src="<%= productos[i].img_url %>" alt="" width="100%">
+                  <h3 class="uk-text-center"><%= productos[i].nombre %></h5>
+                  <h5 class="uk-text-center">$ <%= productos[i].precio %></h3>
+                  <h5 class ="uk-text-center"><%= productos[i].marca %></h3>
+                    <a class="" id="edit" href="/productos/editar/<%= productos[i].id %>">Editar</a>
+                    
+                </a>
+               <div><a class="" id="delet" href="/productos/borrar/<%= productos[i].id %>">Borrar</a></div>
+              </li>  
+              <% } %>
+           
+            </ul>
+            
+            </div>
+          </div>
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
